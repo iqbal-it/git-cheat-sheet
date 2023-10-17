@@ -1,0 +1,122 @@
+Git cheat sheet
+Xiaofei's personal blog / 1262 / 7 / Created 1 year ago / Updated 1 year ago
+link source : https://learnku.com/articles/68324
+
+Git cheat sheet
+git version 2.36.0
+
+Documentation description
+<>Indicates [item to be replaced]
+[]Indicates【Not required】
+|means [or]
+Working tree (workspace), index (temporary storage area), Git directory (HEAD). For the meaning of these three words, please refer to the Git official website.
+Initial configuration
+git config --global user.name [<username>]Configure username
+
+git config --global user.email [<email>]Configure mailbox
+
+git config --global core.editor [<vim>]Configuration editor
+
+Create project
+git clone <options>Clone remote repository
+
+git init [project]Initialize local project
+
+Add to
+git add <file>Add files to the staging area
+
+git commit -m <commit notes>Submit the contents of the staging area to HEAD
+
+git commit -am <commit notes>Combine add and commit operations
+
+git commit --amend -m <commit notes>Merge add and commit operations and merge them into the last commit
+
+show
+git statusDisplay state
+
+git diff [HEAD]Show differences
+
+git logshow log
+
+git show <commit>Display the details of a commit
+
+git blame <file>Display commit information for each line of the file
+
+withdraw
+git restore <file>Undo changes to workspace
+
+git restore --staged <file>Withdraw modifications submitted to the staging area to the workspace
+
+git reset [--mixed] <commit>Withdraw the current version to a commit, retaining the modifications in the workspace
+
+git reset --soft <commit>Withdraw the current version to a commit, retaining the modifications in the workspace and staging area
+
+git reset --hard <commit>Withdraw the current version to a commit without retaining the modifications in the workspace
+
+git rm <file>Delete files from workspace and staging area
+
+git mv <file>Move or rename files from the workspace and staging area
+
+git clean -dfRemove untracked files from workspace
+
+branch
+git branch [--list]Show all branches
+
+git branch -aShow remote branches
+
+git branch <branch>Create a branch
+
+git branch -d|-D <branch> delete branch
+
+git branch -m <newbranch>Rename current branch
+
+git switch <branch>Switch to an existing branch
+
+git switch -c <branch>Create and switch branches
+
+git merge <branch>Merge a branch into the current branch
+
+git tag <tagname>Tag the current branch
+
+git stashStore changes to workspace in dirty working directory
+
+git stash applyRestore the data in the dirty working directory to the workspace (the data saved in the dirty working directory will not be deleted)
+
+git stash dropDelete data in dirty working directory
+
+git stash popRestore data from dirty working directory to workspace and delete dirty data
+
+Remotely
+git remote [-v]show remote library
+
+git remote show <origin>Display information about a remote library
+
+git remote add <origin> <url>Add remote library link
+
+git remote rm <origin>Remove remote library link
+
+git remote rename <oldname> <newname>Rename remote library
+
+git pull [<origin><branch>]Pull the remote library to the local library
+
+git push [-u <origin> <master>]Push local library to remote library
+
+git push origin --delete <branch>|git push origin :crazy-experimentDelete remote branch
+
+git fetchGet the local library from the remote library
+
+help
+git help <command>Display detailed usage documentation for a command
+
+git <command> -hDisplay instructions for a command
+
+checkout
+The responsibilities of this command are unclear and its use is not recommended;
+
+git checkout <file>Discard workspace changes
+
+git checkout -fForcefully discard modifications to the workspace and staging area
+
+git checkout <branch>switch branch
+
+git checkout -b <branch>Create and switch branches
